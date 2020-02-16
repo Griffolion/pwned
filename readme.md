@@ -1,4 +1,4 @@
-![PHPUnit](https://github.com/Griffolion/pwned/workflows/PHP%20Composer/badge.svg?branch=master)
+![PHPUnit](https://github.com/Griffolion/pwned/workflows/PHPUnit/badge.svg)
 
 # HaveIBeenPwnedRangeChecker
 
