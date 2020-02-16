@@ -26,5 +26,10 @@
         "psr-4":{
             "Pwned\\Tests\\": "tests/"
         }
+    },
+    "scripts": {
+        "github-on-push-phpunit-tests": [
+            "vendor/bin/phpunit --bootstrap vendor/autoload.php tests"
+        ]
     }
 }
