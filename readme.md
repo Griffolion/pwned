@@ -9,6 +9,10 @@ Passwords appearing in the search results of the API have appeared in breached d
 - PHP 7.1 or above
 - Curl
 
+## Installation
+
+`composer require griffolion/pwned`
+
 ## Basic Usage
 
 ```php
