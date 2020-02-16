@@ -1,3 +1,5 @@
+![PHPUnit](https://github.com/Griffolion/pwned/workflows/PHP%20Composer/badge.svg?branch=master)
+
 # HaveIBeenPwnedRangeChecker
 
 A small, simple library for checking a password against the [HaveIBeenPwned password checker API](https://haveibeenpwned.com/API/v3#PwnedPasswords).
