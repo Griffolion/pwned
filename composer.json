@@ -1,0 +1,30 @@
+{
+    "name": "griffolion/pwned",
+    "description": "A small library for checking the status of a password against the HaveIBeenPwned database.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Andrew Hall",
+            "email": "andyhall89@protonmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.1",
+        "ext-curl": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8"
+    },
+    "autoload": {
+        "psr-4": {
+            "Pwned\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4":{
+            "Pwned\\Tests\\": "tests/"
+        }
+    }
+}
