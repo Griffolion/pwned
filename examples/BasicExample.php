@@ -6,6 +6,6 @@ require("src/Exceptions/CurlFailureException.php");
 
 use Pwned\Range;
 
-$check = Range::Check("password");
+$check = (new Range())->check("password");
 
 echo $check;

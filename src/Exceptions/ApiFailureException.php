@@ -2,7 +2,9 @@
 
 namespace Pwned\Exceptions;
 
-class ApiFailureException
+use Exception;
+
+class ApiFailureException extends Exception
 {
 
 }
