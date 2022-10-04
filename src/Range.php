@@ -2,6 +2,7 @@
 
 namespace Pwned;
 
+use Pwned\Exceptions\ApiFailureException;
 use Pwned\Exceptions\HashingAlgorithmUnavailableException;
 use Pwned\Exceptions\CurlFailureException;
 
@@ -16,6 +17,7 @@ class Range
      * @return int
      * @throws CurlFailureException
      * @throws HashingAlgorithmUnavailableException
+     * @throws ApiFailureException
      */
     public function check(string $password, bool $addPadding = false) : int {
         if (!in_array('sha1', hash_algos())) {
@@ -38,6 +40,7 @@ class Range
      * @param bool $addPadding
      * @return string
      * @throws CurlFailureException
+     * @throws ApiFailureException
      */
     protected function request(string $pieceToSearchWith, bool $addPadding) : string {
         $curl = curl_init("https://api.pwnedpasswords.com/range/$pieceToSearchWith");
@@ -54,6 +57,10 @@ class Range
         if ($response === false) {
             $error = curl_error($curl);
             throw new CurlFailureException("Curl failed to make the request with the following error: $error");
+        }
+        $info = curl_getinfo($curl);
+        if ($info['http_code'] !== 200) {
+            throw new ApiFailureException("HIBP API returned the following error code: " . $info['http_code'], $info['http_code']);
         }
         curl_close($curl);
         return $response;
