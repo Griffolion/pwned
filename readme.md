@@ -20,7 +20,7 @@ Passwords appearing in the search results of the API have appeared in breached d
 ```php
 use Pwned\Range;
 ...
-$pwnedCount = Range::Check($passwordString);
+$pwnedCount = (new Range())->check("password");
 if ($pwnedCount > 0) {
     echo "Your password is at risk!";
 }
