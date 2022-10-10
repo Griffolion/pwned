@@ -3,6 +3,7 @@
 namespace Pwned\Tests;
 
 use Mockery;
+use Pwned\Exceptions\ApiFailureException;
 use Pwned\Exceptions\CurlFailureException;
 use Pwned\Exceptions\HashingAlgorithmUnavailableException;
 use Pwned\Range;
@@ -33,6 +34,7 @@ class RangeTest Extends TestCase {
      * @return void
      * @throws CurlFailureException
      * @throws HashingAlgorithmUnavailableException
+     * @throws ApiFailureException
      */
     public function testCheck() : void {
         $fixtureData = file_get_contents(__DIR__ . '/fixtures/passwordresults.txt');
